@@ -24,6 +24,7 @@ void PrintArray(int[] array)
     }
     Console.Write(array[array.Length - 1]);
     Console.Write("]");
+    Console.WriteLine();
 }
 
 //
@@ -49,5 +50,4 @@ void PrintArray(int[] array)
 int[] array = GenArray(12, -9, 9);
 PrintArray(array);
 (int pos, int neg) sum = NegativePositiveSum(array);
-Console.WriteLine();
 Console.WriteLine("Сумма положительных чисел: " + sum.pos + ", сумма отрицательных чисел: " + sum.neg);
