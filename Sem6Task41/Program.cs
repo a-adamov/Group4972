@@ -35,6 +35,6 @@ int CoutnPosNum (string str)
     return posNumbers;
 }
 
-string str = ReadLimitStr("Введите 10 символов", 15);
+string str = ReadLimitStr("Введите 15 символов", 15);
 int posNumbers = CoutnPosNum(str);
-Console.WriteLine("Кол-во положительных чисел: " + posNumbers);
+Console.WriteLine("Кол-во положительных чисел в строке: " + posNumbers);

@@ -5,46 +5,46 @@
 // Метод чтения данных
 double[] ReadKoef(string msg)
 {
-    Console.WriteLine(msg);
-    string str = Console.ReadLine();
-    double[] line = str.Split(' ').Select(double.Parse).ToArray();
+    Console.WriteLine(msg); // выводим сообщение
+    string str = Console.ReadLine(); // читаем данные
+    double[] line = str.Split(' ').Select(double.Parse).ToArray(); // разбиваем данные на 2 коэффициента и записываем в массив
 
-    return line;
+    return line; // возвращаем 2 коэффициента
 }
 
 // Метод нахождения точки пересечения прямых
 double[] FindCrossPoint(double[] line1, double[] line2)
 {
-    double[] point = new double[2];
-    double x = (line2[1] - line1[1]) / (line1[0] - line2[0]);
-    double y = line1[0] * x + line1[1];
-    point[0] = x;
+    double[] point = new double[2]; // создаем новый массив для координамт
+    double x = (line2[1] - line1[1]) / (line1[0] - line2[0]); // находим координату x
+    double y = line1[0] * x + line1[1]; // находим координату y
+    point[0] = x; // записываем координаты в массив
     point[1] = y;
-    return point;
+    return point; // возвращаем координаты точки пересечения
 }
 
 // Метод нахождения расстояния между двумя точками
 double FindDistance(double[] point1, double[] point2)
 {
-    double dist = Math.Sqrt(Math.Pow((point2[0] - point1[0]), 2) + Math.Pow((point2[1] - point1[1]), 2));
-    return dist;
+    double dist = Math.Sqrt(Math.Pow((point2[0] - point1[0]), 2) + Math.Pow((point2[1] - point1[1]), 2)); // находим расстояние по координатам
+    return dist; // возвращаем расстояние
 }
 
 // Метод нахождения площади треугольника по формуле Герона
 double TriangleSquare(double[] line1, double[] line2, double[] line3)
 {
-    double[] point1 = FindCrossPoint(line1, line2);
+    double[] point1 = FindCrossPoint(line1, line2); // находим точки пересечения трех прямых попарно
     double[] point2 = FindCrossPoint(line1, line3);
     double[] point3 = FindCrossPoint(line2, line3);
 
-    double a = FindDistance(point1, point2);
+    double a = FindDistance(point1, point2); // находим расстояния между точками пересечения
     double b = FindDistance(point1, point3);
     double c = FindDistance(point2, point3);
 
     double p = (a + b + c) / 2;
-    double square = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+    double square = Math.Sqrt(p * (p - a) * (p - b) * (p - c)); // считаем площадь треугольника
 
-    return square;
+    return square; // возвращаем значение площади
 }
 
 
