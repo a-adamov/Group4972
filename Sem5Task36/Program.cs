@@ -33,7 +33,7 @@ void PrintArray(int[] array)
 int SumOdd(int[] arr)
 {
     int sum = 0;
-    for (int i = 0; i < arr.Length; i += 2) // суммируем только нечетные элементы (элемент с индексом 0 считаем четным)
+    for (int i = 1; i < arr.Length; i += 2) // суммируем только нечетные элементы
     {
         sum += arr[i];
     }
@@ -44,7 +44,7 @@ int SumOdd(int[] arr)
 void FindPair(int[] arr)
 {
     Console.WriteLine("В массиве обнаружены пары (значение[индекс]):");
-    List<int> allPairIndexes = new List<int>(); // создаем пустой лис для записи индексов найденных пар
+    List<int> allPairIndexes = new List<int>(); // создаем пустой лист для записи индексов найденных пар
     for (int i = 0; i < arr.Length - 1; i++)
     {
         for (int j = i+1; j < arr.Length; j++)
